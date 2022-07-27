@@ -30,12 +30,17 @@ Partial Class Form1
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuOpen = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuSave = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuAbout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -93,8 +98,7 @@ Partial Class Form1
         Me.ListBox1.Location = New System.Drawing.Point(283, 35)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox1.Size = New System.Drawing.Size(329, 225)
-        Me.ListBox1.Sorted = True
+        Me.ListBox1.Size = New System.Drawing.Size(329, 264)
         Me.ListBox1.TabIndex = 7
         '
         'Button2
@@ -105,17 +109,6 @@ Partial Class Form1
         Me.Button2.TabIndex = 6
         Me.Button2.Text = "Delete Selected Item"
         Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label2.Location = New System.Drawing.Point(12, 281)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(412, 13)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Items added to the list box will not save when the application is closed."
         '
         'MenuStrip1
         '
@@ -128,15 +121,32 @@ Partial Class Form1
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuExit})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuOpen, Me.mnuSave, Me.ToolStripSeparator1, Me.mnuExit})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
+        'mnuOpen
+        '
+        Me.mnuOpen.Name = "mnuOpen"
+        Me.mnuOpen.Size = New System.Drawing.Size(103, 22)
+        Me.mnuOpen.Text = "Open"
+        '
+        'mnuSave
+        '
+        Me.mnuSave.Name = "mnuSave"
+        Me.mnuSave.Size = New System.Drawing.Size(103, 22)
+        Me.mnuSave.Text = "Save"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(100, 6)
+        '
         'mnuExit
         '
         Me.mnuExit.Name = "mnuExit"
-        Me.mnuExit.Size = New System.Drawing.Size(93, 22)
+        Me.mnuExit.Size = New System.Drawing.Size(103, 22)
         Me.mnuExit.Text = "Exit"
         '
         'HelpToolStripMenuItem
@@ -152,24 +162,35 @@ Partial Class Form1
         Me.mnuAbout.Size = New System.Drawing.Size(180, 22)
         Me.mnuAbout.Text = "About Item Manage"
         '
+        'SaveFileDialog1
+        '
+        Me.SaveFileDialog1.DefaultExt = "txt"
+        Me.SaveFileDialog1.InitialDirectory = "Documents"
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'Form1
         '
+        Me.AcceptButton = Me.Button1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(624, 313)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.HelpButton = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(640, 360)
         Me.MinimumSize = New System.Drawing.Size(640, 360)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Item Manage"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -187,10 +208,15 @@ Partial Class Form1
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents Button2 As Button
-    Friend WithEvents Label2 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents mnuExit As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents mnuAbout As ToolStripMenuItem
+    Friend WithEvents mnuOpen As ToolStripMenuItem
+    Friend WithEvents mnuSave As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class
