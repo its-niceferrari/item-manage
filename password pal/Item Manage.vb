@@ -19,10 +19,7 @@ Public Class Form1
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        ListBox1.Items.Clear()
-
-        'ListBox1.Item.ClearSelected()
-        'Clear(ListBox1.SelectedItem)
+        ListBox1.Items.Remove(ListBox1.SelectedItem)
     End Sub
 
     Private Sub Label2_Click_1(sender As Object, e As EventArgs)
@@ -38,7 +35,7 @@ Public Class Form1
     End Sub
 
     Private Sub mnuAbout_Click(sender As Object, e As EventArgs) Handles mnuAbout.Click
-        MessageBox.Show("Item Manage - Version: 1.0.1.0 - Build Date: 2022-07-26", "About")
+        MessageBox.Show("Item Manage - Version: 1.2.0.0 - Build Date: 2022-07-28", "About")
     End Sub
 
     Private Sub mnuSave_Click(sender As Object, e As EventArgs) Handles mnuSave.Click
@@ -53,8 +50,10 @@ Public Class Form1
         SaveFileDialog1.Filter = "TXT Files (*.txt*)|*.txt"
         If SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK _
          Then
-            My.Computer.FileSystem.WriteAllText _
-            (SaveFileDialog1.FileName, lst, True)
+            'My.Computer.FileSystem.WriteAllText _
+            '(SaveFileDialog1.FileName, lst, True)
+
+            File.WriteAllText(SaveFileDialog1.FileName, lst)
         End If
     End Sub
 
@@ -66,7 +65,7 @@ Public Class Form1
             'clears all items before opening text file
             ListBox1.Items.Clear()
 
-            For Each line As String In File.ReadLines(OpenFileDialog1.SafeFileName)
+            For Each line As String In File.ReadLines(OpenFileDialog1.FileName)
                 ' adds each line as a seperate ListBox1 item
                 ListBox1.Items.AddRange(line.Split(vbNewLine))
             Next
