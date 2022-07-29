@@ -10,7 +10,7 @@ Items in the list can be removed by selecting and clicking the Delete Selected I
 
 The entire list can be saved to a text file through the file menu, which can be opened in Item Manage or any other application that can import text files.
 
-![app interface](https://user-images.githubusercontent.com/94198408/181801001-3e43b988-7545-4dac-944c-2eae7d48f5e0.png)
+![app interface](https://user-images.githubusercontent.com/94198408/181850837-9e5f6d61-ce5e-48e1-8f9c-595369ad1389.png)
 
 ### Testing
 This application has been tested to work in Windows 8.1, Windows 10, and Windows 11.
