@@ -12,8 +12,8 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("Item Manage")>
 <Assembly: AssemblyDescription("Simple item and list manager!")>
 <Assembly: AssemblyCompany("Dom's Tech Desk Solutions")>
-<Assembly: AssemblyProduct("Simple item and list manager!")>
-<Assembly: AssemblyCopyright("")>
+<Assembly: AssemblyProduct("Item Manage")>
+<Assembly: AssemblyCopyright("GNU General Public License v3.0")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.2.0.0")>
-<Assembly: AssemblyFileVersion("1.2.0.0")>
+<Assembly: AssemblyVersion("2.0.0.0")>
+<Assembly: AssemblyFileVersion("2.0.0.0")>
 <Assembly: NeutralResourcesLanguage("en")>

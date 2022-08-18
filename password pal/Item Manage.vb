@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 
 Public Class Form1
+
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub
@@ -13,12 +14,12 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ListBox1.Items.AddRange(TextBox1.Text.Split(vbNewLine))
-        TextBox1.Clear()
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        ListBox1.Items.AddRange(newItemTextBox.Text.Split(vbNewLine))
+        newItemTextBox.Clear()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         ListBox1.Items.Remove(ListBox1.SelectedItem)
     End Sub
 
@@ -26,7 +27,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -35,7 +36,8 @@ Public Class Form1
     End Sub
 
     Private Sub mnuAbout_Click(sender As Object, e As EventArgs) Handles mnuAbout.Click
-        MessageBox.Show("Item Manage - Version: 1.2.0.0 - Build Date: 2022-07-28", "About")
+        AboutBox.Refresh()
+        AboutBox.Show()
     End Sub
 
     Private Sub mnuSave_Click(sender As Object, e As EventArgs) Handles mnuSave.Click
@@ -70,5 +72,20 @@ Public Class Form1
                 ListBox1.Items.AddRange(line.Split(vbNewLine))
             Next
         End If
+    End Sub
+
+    Private Sub mnuCopy_Click(sender As Object, e As EventArgs) Handles mnuCopy.Click
+        If ListBox1.SelectedIndex >= 0 Then
+            Clipboard.SetText(ListBox1.SelectedItem)
+        End If
+    End Sub
+
+    Private Sub mnuFind_Click(sender As Object, e As EventArgs) Handles mnuFind.Click
+        Find_Dialog.Refresh()
+        Find_Dialog.Show()
+    End Sub
+
+    Private Sub addItemButton_Click(sender As Object, e As EventArgs) Handles addItemButton.Click
+
     End Sub
 End Class
