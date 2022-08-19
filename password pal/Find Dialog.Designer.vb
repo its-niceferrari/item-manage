@@ -26,6 +26,7 @@ Partial Class Find_Dialog
         Me.Cancel_Button = New System.Windows.Forms.Button()
         Me.findWhatLabel = New System.Windows.Forms.Label()
         Me.findTextBox = New System.Windows.Forms.TextBox()
+        Me.findResults = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'OK_Button
@@ -45,7 +46,7 @@ Partial Class Find_Dialog
         Me.Cancel_Button.Name = "Cancel_Button"
         Me.Cancel_Button.Size = New System.Drawing.Size(67, 23)
         Me.Cancel_Button.TabIndex = 1
-        Me.Cancel_Button.Text = "Cancel"
+        Me.Cancel_Button.Text = "Close"
         '
         'findWhatLabel
         '
@@ -63,6 +64,15 @@ Partial Class Find_Dialog
         Me.findTextBox.Size = New System.Drawing.Size(269, 20)
         Me.findTextBox.TabIndex = 2
         '
+        'findResults
+        '
+        Me.findResults.AutoSize = True
+        Me.findResults.Location = New System.Drawing.Point(12, 52)
+        Me.findResults.Name = "findResults"
+        Me.findResults.Size = New System.Drawing.Size(184, 13)
+        Me.findResults.TabIndex = 3
+        Me.findResults.Text = "Enter a search query to find in the list."
+        '
         'Find_Dialog
         '
         Me.AcceptButton = Me.OK_Button
@@ -70,6 +80,7 @@ Partial Class Find_Dialog
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
         Me.ClientSize = New System.Drawing.Size(435, 148)
+        Me.Controls.Add(Me.findResults)
         Me.Controls.Add(Me.Cancel_Button)
         Me.Controls.Add(Me.findTextBox)
         Me.Controls.Add(Me.OK_Button)
@@ -91,4 +102,5 @@ Partial Class Find_Dialog
     Friend WithEvents Cancel_Button As System.Windows.Forms.Button
     Friend WithEvents findWhatLabel As Label
     Friend WithEvents findTextBox As TextBox
+    Friend WithEvents findResults As Label
 End Class

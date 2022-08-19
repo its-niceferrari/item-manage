@@ -53,7 +53,7 @@ Partial Class AboutBox
         Me.LabelCompanyName.Name = "LabelCompanyName"
         Me.LabelCompanyName.Size = New System.Drawing.Size(257, 17)
         Me.LabelCompanyName.TabIndex = 0
-        Me.LabelCompanyName.Text = "Dom's Tech Desk Solutions"
+        Me.LabelCompanyName.Text = "Company"
         Me.LabelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'LabelVersion
@@ -77,7 +77,7 @@ Partial Class AboutBox
         Me.LabelProductName.Name = "LabelProductName"
         Me.LabelProductName.Size = New System.Drawing.Size(257, 17)
         Me.LabelProductName.TabIndex = 0
-        Me.LabelProductName.Text = "Item Manage"
+        Me.LabelProductName.Text = "Application Name"
         Me.LabelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'LogoPictureBox

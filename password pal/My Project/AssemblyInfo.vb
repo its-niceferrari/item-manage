@@ -10,10 +10,10 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Item Manage")>
-<Assembly: AssemblyDescription("Simple item and list manager!")>
+<Assembly: AssemblyDescription("A note-taking application focused on simplicity and operability around the text file container. Created under the GNU General Public License v3.0.")>
 <Assembly: AssemblyCompany("Dom's Tech Desk Solutions")>
 <Assembly: AssemblyProduct("Item Manage")>
-<Assembly: AssemblyCopyright("GNU General Public License v3.0")>
+<Assembly: AssemblyCopyright("")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
