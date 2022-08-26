@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1972
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Item Manage", "password pal\Item Manage.vbproj", "{B96D0656-D9F5-4D8E-B26C-FEF1ECF41362}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Item Manage", "item manage\Item Manage.vbproj", "{B96D0656-D9F5-4D8E-B26C-FEF1ECF41362}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
