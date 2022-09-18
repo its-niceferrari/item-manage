@@ -32,8 +32,6 @@ Partial Class Form1
         Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCopy = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuFind = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuAbout = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
@@ -46,9 +44,9 @@ Partial Class Form1
         Me.addItemButton = New System.Windows.Forms.Button()
         Me.newItemTextBox = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.moveUpButton = New System.Windows.Forms.Button()
         Me.moveDownButton = New System.Windows.Forms.Button()
+        Me.moveUpButton = New System.Windows.Forms.Button()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -109,7 +107,7 @@ Partial Class Form1
         '
         'EditToolStripMenuItem
         '
-        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCopy, Me.ToolStripSeparator2, Me.mnuFind})
+        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCopy})
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         Me.EditToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
         Me.EditToolStripMenuItem.Text = "Edit"
@@ -120,21 +118,6 @@ Partial Class Form1
         Me.mnuCopy.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
         Me.mnuCopy.Size = New System.Drawing.Size(180, 22)
         Me.mnuCopy.Text = "Copy"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
-        Me.ToolStripSeparator2.Visible = False
-        '
-        'mnuFind
-        '
-        Me.mnuFind.Enabled = False
-        Me.mnuFind.Name = "mnuFind"
-        Me.mnuFind.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
-        Me.mnuFind.Size = New System.Drawing.Size(180, 22)
-        Me.mnuFind.Text = "Find"
-        Me.mnuFind.Visible = False
         '
         'HelpToolStripMenuItem
         '
@@ -162,7 +145,7 @@ Partial Class Form1
         '
         Me.Splitter1.Location = New System.Drawing.Point(0, 24)
         Me.Splitter1.Name = "Splitter1"
-        Me.Splitter1.Size = New System.Drawing.Size(3, 289)
+        Me.Splitter1.Size = New System.Drawing.Size(3, 297)
         Me.Splitter1.TabIndex = 10
         Me.Splitter1.TabStop = False
         '
@@ -245,6 +228,24 @@ Partial Class Form1
         Me.Label3.Size = New System.Drawing.Size(0, 13)
         Me.Label3.TabIndex = 3
         '
+        'moveDownButton
+        '
+        Me.moveDownButton.Location = New System.Drawing.Point(3, 32)
+        Me.moveDownButton.Name = "moveDownButton"
+        Me.moveDownButton.Size = New System.Drawing.Size(75, 23)
+        Me.moveDownButton.TabIndex = 10
+        Me.moveDownButton.Text = "Move Down"
+        Me.moveDownButton.UseVisualStyleBackColor = True
+        '
+        'moveUpButton
+        '
+        Me.moveUpButton.Location = New System.Drawing.Point(3, 3)
+        Me.moveUpButton.Name = "moveUpButton"
+        Me.moveUpButton.Size = New System.Drawing.Size(75, 23)
+        Me.moveUpButton.TabIndex = 9
+        Me.moveUpButton.Text = "Move Up"
+        Me.moveUpButton.UseVisualStyleBackColor = True
+        '
         'ListBox1
         '
         Me.ListBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -259,30 +260,12 @@ Partial Class Form1
         Me.ListBox1.Size = New System.Drawing.Size(307, 251)
         Me.ListBox1.TabIndex = 8
         '
-        'moveUpButton
-        '
-        Me.moveUpButton.Location = New System.Drawing.Point(3, 3)
-        Me.moveUpButton.Name = "moveUpButton"
-        Me.moveUpButton.Size = New System.Drawing.Size(75, 23)
-        Me.moveUpButton.TabIndex = 9
-        Me.moveUpButton.Text = "Move Up"
-        Me.moveUpButton.UseVisualStyleBackColor = True
-        '
-        'moveDownButton
-        '
-        Me.moveDownButton.Location = New System.Drawing.Point(3, 32)
-        Me.moveDownButton.Name = "moveDownButton"
-        Me.moveDownButton.Size = New System.Drawing.Size(75, 23)
-        Me.moveDownButton.TabIndex = 10
-        Me.moveDownButton.Text = "Move Down"
-        Me.moveDownButton.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AcceptButton = Me.addItemButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(624, 313)
+        Me.ClientSize = New System.Drawing.Size(624, 321)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.Splitter1)
         Me.Controls.Add(Me.Label1)
@@ -320,8 +303,6 @@ Partial Class Form1
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents mnuCopy As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents mnuFind As ToolStripMenuItem
     Friend WithEvents Splitter1 As Splitter
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents addItemButton As Button

@@ -80,11 +80,6 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub MnuFind_Click(sender As Object, e As EventArgs) Handles mnuFind.Click
-        Find_Dialog.Refresh()
-        Find_Dialog.Show()
-    End Sub
-
     Private Sub AddItemButton_Click(sender As Object, e As EventArgs) Handles addItemButton.Click
         ListBox1.Items.AddRange(newItemTextBox.Text.Split(vbNewLine))
         newItemTextBox.Clear()
