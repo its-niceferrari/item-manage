@@ -1,0 +1,15 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="item_manage.MainWindow"
+        Title="Item Manage"
+        Width="800" Height="600">
+    
+    <Grid RowDefinitions="Auto, Auto, *" Margin="10">
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10" Spacing="10">
+            <Button Content="New Item..." Click="OnClickNewItem"/>
+            <Button Content="New Category..." Click="OnClickNewCategory"/>
+            <Button Content="Open Selected" Click="OnClickOpenSelected"/>
+        </StackPanel>
+        <TreeView x:Name="FileTreeView" Grid.Row="2"/>
+    </Grid>
+</Window>

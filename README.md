@@ -1,11 +1,15 @@
 # Item Manage
-A note-taking application focused on simplicity and operability around the text file container.
+A lightweight desktop application built with C# that allows users to organize programs, files, and notes within custom categories.
 
-## Installing
-Download the executable from the latest release in the repository. Make sure to allow the download in your browser and approve the program in Microsoft SmartScreen when opening for the first time.
+## Installation
+1. Clone this repository to your local machine: ```git clone https://github.com/its-niceferrari/item-manage.git```
+2. Open the project in Visual Studio Code (or your preferred .NET development environment).
+3. Ensure the project is using a compatible .NET version, such as SDK 9.0 or higher.
+4. Download Avalonia UI (installed via `dotnet new install Avalonia.Templates`) 
+5. Build and run the project.
 
-## Using
-Type important notes, reminders, and other info in the text box on the left side of the application. Press the ENTER key or click the Add Item button to move it to the list.
-Items in the list can be removed by selecting and clicking the Delete Selected Item button.
-
-The entire list can be saved to a text file through the file menu, which can be opened in Item Manage or any other application that can import text files.
+## Usage
+1. Create Categories – Click "New Category" to create a collapsible section.
+2. Add Items – Click "New Item" to add a note, document, or application shortcut.
+3. Open Files/Programs – Select an item and click "Open Selected".
+4. Expand/Collapse Categories – Keep your workspace organized.

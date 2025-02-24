@@ -52,3 +52,4 @@ secrets.json
 
 # Mac and Linux
 .DS
+.DS_Store

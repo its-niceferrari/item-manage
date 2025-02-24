@@ -1,0 +1,22 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="item_manage.NewItem"
+        Title="New Item"
+        Width="400" Height="300">
+
+    <StackPanel Margin="10,10,10,10" Spacing="10">
+        <TextBlock Text="Select Category:"/>
+        <ComboBox x:Name="CategoryComboBox"/>
+
+        <TextBlock Text="Item Name:"/>
+        <TextBox x:Name="ItemNameTextBox"/>
+
+        <TextBlock Text="File Path (optional):"/>
+        <TextBox x:Name="FilePathNameTextBox"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,10,10,10" Spacing="10">
+            <Button Content="Cancel" Click="OnCancel"/>
+            <Button Content="Add" Click="OnAdd"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

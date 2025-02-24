@@ -1,0 +1,16 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="item_manage.NewCategory"
+        Title="New Category"
+        Width="400" Height="300">
+
+    <StackPanel Margin="10,10,10,10" Spacing="10">
+        <TextBlock Text="Category Name:"/>
+        <TextBox x:Name="CategoryNameTextBox"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,10,10,10" Spacing="10">
+            <Button Content="Cancel" Click="OnCancel"/>
+            <Button Content="Add" Click="OnAdd"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
