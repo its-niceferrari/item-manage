@@ -12,7 +12,15 @@
         <TextBox x:Name="ItemNameTextBox"/>
 
         <TextBlock Text="File Path (optional):"/>
-        <TextBox x:Name="FilePathNameTextBox"/>
+        <Grid Margin="0,10,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="FilePathTextBox" Grid.Column="0" Text=""/>
+            <Button Content="Browse..." Click="OnBrowseFile" Grid.Column="1" Margin="10,0,0,0"/>
+        </Grid>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,10,10,10" Spacing="10">
             <Button Content="Cancel" Click="OnCancel"/>

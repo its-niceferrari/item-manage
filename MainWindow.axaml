@@ -8,8 +8,14 @@
         <StackPanel Orientation="Horizontal" Margin="0,0,0,10" Spacing="10">
             <Button Content="New Item..." Click="OnClickNewItem"/>
             <Button Content="New Category..." Click="OnClickNewCategory"/>
-            <Button Content="Open Selected" Click="OnClickOpenSelected"/>
         </StackPanel>
-        <TreeView x:Name="FileTreeView" Grid.Row="2"/>
+        <TreeView x:Name="FileTreeView" Grid.Row="2">
+            <TreeView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Open" Click="OnClickOpenSelected"/>
+                    <MenuItem Header="Remove" Click="OnClickRemoveSelected"/>
+                </ContextMenu>
+            </TreeView.ContextMenu>
+        </TreeView>
     </Grid>
 </Window>

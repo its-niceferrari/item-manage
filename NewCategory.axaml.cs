@@ -21,10 +21,15 @@ namespace item_manage {
         }
 
         private void OnAdd(object? sender, RoutedEventArgs e) {
-            if (string.IsNullOrWhiteSpace(categoryNameTextBox?.Text))
-                return;
-
             CategoryName = categoryNameTextBox?.Text;
+            if (string.IsNullOrWhiteSpace(CategoryName)) {
+                Console.WriteLine("No category name entered.");
+                return;
+            } else if (CategoryName == "Unclassified") {
+                Console.WriteLine("The Unclassified category is already defined.");
+                return;
+            }
+
             treeViewManager?.AddCategory(CategoryName);
             this.Close();
         }

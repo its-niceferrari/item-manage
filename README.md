@@ -11,5 +11,8 @@ A lightweight desktop application built with C# that allows users to organize pr
 ## Usage
 1. Create Categories – Click "New Category" to create a collapsible section.
 2. Add Items – Click "New Item" to add a note, document, or application shortcut.
-3. Open Files/Programs – Select an item and click "Open Selected".
+3. Open Files/Programs – Right click an item and click "Open".
 4. Expand/Collapse Categories – Keep your workspace organized.
+
+## Known Issues
+- When adding an item on macOS, applications in the /Applications folder cannot be selected using the file picker due to system restrictions. To add them, manually enter the file path into the text box. 
