@@ -15,4 +15,4 @@ A lightweight desktop application built with C# that allows users to organize pr
 4. Expand/Collapse Categories – Keep your workspace organized.
 
 ## Known Issues
-- When adding an item on macOS, applications in the /Applications folder cannot be selected using the file picker due to system restrictions. To add them, manually enter the file path into the text box. 
+- When adding an item in macOS, system applications cannot be selected using the file picker. To add them, manually enter the file path into the text box. 
